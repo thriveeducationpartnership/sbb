@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -11,79 +12,66 @@
 
 body{
 font-family:Segoe UI,Arial,sans-serif;
+background:#f5f7fa;
 margin:0;
-background:#f4f6f9;
 color:#333;
 }
 
 header{
 background:#1f4e79;
 color:white;
-padding:30px;
+padding:35px;
 text-align:center;
 }
 
 .container{
-max-width:1000px;
+max-width:900px;
 margin:auto;
 padding:30px;
 }
 
 .card{
 background:white;
-border-radius:8px;
 padding:30px;
-margin-bottom:25px;
+border-radius:8px;
 box-shadow:0 4px 10px rgba(0,0,0,0.08);
+margin-bottom:25px;
 }
 
-.install-btn{
+.button{
 display:inline-block;
+padding:16px 28px;
 background:#2d89ef;
 color:white;
-padding:16px 26px;
 font-size:18px;
-font-weight:600;
 border-radius:6px;
 text-decoration:none;
-margin-top:15px;
+margin-top:10px;
 }
 
-.install-btn:hover{
+.button:hover{
 background:#1b66c9;
 }
 
-.warning{
+.os{
+display:none;
+}
+
+.visible{
+display:block;
+}
+
+.notice{
 background:#fff3cd;
 border-left:5px solid #ffc107;
 padding:15px;
-margin-top:20px;
-}
-
-.os-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.os{
-text-align:center;
-}
-
-.os img{
-width:60px;
-margin-bottom:10px;
+margin-top:15px;
 }
 
 footer{
 text-align:center;
-padding:30px;
-font-size:14px;
 color:#777;
-}
-
-.hidden{
-display:none;
+padding:30px;
 }
 
 </style>
@@ -102,130 +90,119 @@ To access the internet on this network you must install the security certificate
 
 </header>
 
-
 <div class="container">
 
-<div class="card">
-
-<h2>Automatic Install</h2>
-
-<p id="windowsText">
-If you are using Windows you can install the certificate automatically.
-</p>
-
-<a id="exeButton" class="install-btn" href="install-cert.exe">
-Install Automatically (Windows)
-</a>
-
-<div class="warning">
-
-<b>Windows Security Warning?</b>
-
-If Windows shows a SmartScreen warning:
-
-1. Click <b>More Info</b>  
-2. Click <b>Run Anyway</b>
-
-</div>
-
-</div>
-
 
 <div class="card">
 
-<h2>Manual Installation</h2>
+<h2>Install Certificate</h2>
 
-<p>
-If the automatic installer does not work, download the certificate and install it manually.
-</p>
+<p id="deviceText"></p>
 
-<a class="install-btn" href="certificate.crt">
+<a id="installBtn" class="button" href="certificate.crt">
 Download Certificate
 </a>
 
 </div>
 
 
-<div class="card">
+<!-- WINDOWS -->
 
-<h2>Installation Instructions</h2>
+<div id="windows" class="card os">
 
-<div class="os-grid">
+<h2>Windows Instructions</h2>
 
-<div class="os">
-
-<img src="https://cdn-icons-png.flaticon.com/512/888/888882.png">
-
-<h3>Windows</h3>
-
-<ol style="text-align:left">
+<ol>
 
 <li>Download the certificate</li>
-<li>Double-click the file</li>
+
+<li>Open the downloaded file</li>
+
 <li>Select <b>Install Certificate</b></li>
-<li>Choose <b>Local Machine</b></li>
-<li>Install into <b>Trusted Root Certification Authorities</b></li>
+
+<li>Choose <b>Current User</b></li>
+
+<li>Select <b>Place in Trusted Root Certification Authorities</b></li>
+
+<li>Finish the wizard</li>
 
 </ol>
+
+<div class="notice">
+
+Administrator rights are <b>not required</b>.  
+The certificate installs only for your user account.
+
+</div>
 
 </div>
 
 
-<div class="os">
+<!-- MAC -->
 
-<img src="https://cdn-icons-png.flaticon.com/512/2/2235.png">
+<div id="mac" class="card os">
 
-<h3>macOS</h3>
+<h2>macOS Instructions</h2>
 
-<ol style="text-align:left">
+<ol>
 
 <li>Download the certificate</li>
+
 <li>Open the file</li>
+
 <li>Add to <b>System Keychain</b></li>
-<li>Set trust to <b>Always Trust</b></li>
+
+<li>Open Keychain Access</li>
+
+<li>Set the certificate to <b>Always Trust</b></li>
 
 </ol>
 
 </div>
 
 
-<div class="os">
+<!-- IOS -->
 
-<img src="https://cdn-icons-png.flaticon.com/512/831/831276.png">
+<div id="ios" class="card os">
 
-<h3>iPhone / iPad</h3>
+<h2>iPhone / iPad Instructions</h2>
 
-<ol style="text-align:left">
+<ol>
 
 <li>Download the certificate</li>
+
 <li>Open <b>Settings</b></li>
-<li>Tap <b>Profile Downloaded</b></li>
+
+<li>Select <b>Profile Downloaded</b></li>
+
 <li>Install the profile</li>
-<li>Enable trust in Certificate Settings</li>
+
+<li>Go to <b>General → About → Certificate Trust Settings</b></li>
+
+<li>Enable trust for the certificate</li>
 
 </ol>
 
 </div>
 
 
-<div class="os">
+<!-- ANDROID -->
 
-<img src="https://cdn-icons-png.flaticon.com/512/888/888839.png">
+<div id="android" class="card os">
 
-<h3>Android</h3>
+<h2>Android Instructions</h2>
 
-<ol style="text-align:left">
+<ol>
 
 <li>Download the certificate</li>
+
 <li>Open <b>Security Settings</b></li>
+
 <li>Select <b>Install Certificate</b></li>
+
 <li>Choose the downloaded file</li>
 
 </ol>
-
-</div>
-
-</div>
 
 </div>
 
@@ -236,35 +213,79 @@ Download Certificate
 
 <p>
 
-This network uses secure filtering to protect users and comply with safeguarding requirements.  
-Installing the certificate allows encrypted websites (HTTPS) to work correctly while connected to the network.
+This network uses secure filtering to meet safeguarding requirements.  
+Installing the certificate allows secure websites (HTTPS) to work correctly while connected.
 
 </p>
 
 </div>
 
+
 </div>
 
 <footer>
 
-If you have any issues installing the certificate please contact IT support.
+If you have issues installing the certificate please contact IT support.
 
 </footer>
 
 
-
 <script>
 
-/* Hide Windows installer if not Windows */
+/* Device Detection */
 
-if(!navigator.userAgent.includes("Windows")){
-document.getElementById("exeButton").classList.add("hidden")
-document.getElementById("windowsText").innerText =
-"Automatic installer is available for Windows devices only."
+var ua = navigator.userAgent
+
+function show(id){
+document.getElementById(id).classList.add("visible")
+}
+
+if(ua.includes("Windows")){
+
+show("windows")
+
+document.getElementById("deviceText").innerHTML =
+"This looks like a <b>Windows device</b>."
+
+document.getElementById("installBtn").href="install-cert.exe"
+
+}
+
+else if(ua.includes("Mac")){
+
+show("mac")
+
+document.getElementById("deviceText").innerHTML =
+"This looks like a <b>Mac</b>."
+
+}
+
+else if(ua.includes("iPhone") || ua.includes("iPad")){
+
+show("ios")
+
+document.getElementById("deviceText").innerHTML =
+"This looks like an <b>iPhone or iPad</b>."
+
+}
+
+else if(ua.includes("Android")){
+
+show("android")
+
+document.getElementById("deviceText").innerHTML =
+"This looks like an <b>Android device</b>."
+
+}
+
+else{
+
+document.getElementById("deviceText").innerHTML =
+"Download the certificate and follow the instructions for your device."
+
 }
 
 </script>
 
 </body>
-
 </html>
