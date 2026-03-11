@@ -1,79 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<title>Install Network Certificate</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Network Certificate Installation</title>
-
 <style>
-
 body{
-font-family:Segoe UI,Arial,sans-serif;
-background:#f5f7fa;
-margin:0;
-color:#333;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f5f7fa;
+    margin:0;
 }
 
 header{
-background:#1f4e79;
-color:white;
-padding:35px;
-text-align:center;
+    background:#003a8f;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
 
 .container{
-max-width:900px;
-margin:auto;
-padding:30px;
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
 }
 
 .card{
-background:white;
-padding:30px;
-border-radius:8px;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
-margin-bottom:25px;
+    background:white;
+    padding:25px;
+    border-radius:8px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom:25px;
 }
 
 .button{
-display:inline-block;
-padding:16px 28px;
-background:#2d89ef;
-color:white;
-font-size:18px;
-border-radius:6px;
-text-decoration:none;
-margin-top:10px;
+    display:inline-block;
+    padding:14px 20px;
+    margin-top:10px;
+    background:#2b7cff;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
 }
 
-.button:hover{
-background:#1b66c9;
+.warning{
+    background:#fff3cd;
+    padding:15px;
+    border-left:5px solid #ffc107;
+    margin-top:10px;
 }
 
 .os{
-display:none;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
 }
 
-.visible{
-display:block;
-}
-
-.notice{
-background:#fff3cd;
-border-left:5px solid #ffc107;
-padding:15px;
-margin-top:15px;
+.os img{
+    width:64px;
 }
 
 footer{
-text-align:center;
-color:#777;
-padding:30px;
+    text-align:center;
+    padding:20px;
+    color:#666;
 }
-
 </style>
 
 </head>
@@ -81,211 +73,112 @@ padding:30px;
 <body>
 
 <header>
-
 <h1>Network Certificate Required</h1>
-
-<p>
-To access the internet on this network you must install the security certificate.
-</p>
-
+<p>To access the internet on this network you must install the certificate below.</p>
 </header>
 
 <div class="container">
 
+<div class="card">
+<h2>Automatic Install (Windows)</h2>
+
+<p>If you are using Windows you can install the certificate automatically.</p>
+
+<a class="button" href="install-cert.exe">Download Installer</a>
+
+<div class="warning">
+<strong>Note:</strong> Windows may display a SmartScreen warning.  
+Click <b>More Info → Run Anyway</b>.
+
+<br><br>
+
+The certificate will be installed for your <b>current user account</b>.  
+Administrator rights are <b>not required</b>.
+</div>
+
+</div>
+
 
 <div class="card">
+<h2>Manual Installation</h2>
 
-<h2>Install Certificate</h2>
+<p>If you prefer, download the certificate and install it manually.</p>
 
-<p id="deviceText"></p>
-
-<a id="installBtn" class="button" href="certificate.crt">
-Download Certificate
-</a>
+<a class="button" href="certificate.crt">Download Certificate</a>
 
 </div>
 
 
-<!-- WINDOWS -->
+<div class="card">
+<h2>Instructions by Device</h2>
 
-<div id="windows" class="card os">
+<div class="os">
 
-<h2>Windows Instructions</h2>
-
+<div>
+<img src="https://cdn-icons-png.flaticon.com/512/732/732225.png">
+<h3>Windows</h3>
 <ol>
-
 <li>Download the certificate</li>
-
-<li>Open the downloaded file</li>
-
+<li>Double-click the file</li>
 <li>Select <b>Install Certificate</b></li>
-
 <li>Choose <b>Current User</b></li>
-
-<li>Select <b>Place in Trusted Root Certification Authorities</b></li>
-
+<li>Select <b>Trusted Root Certification Authorities</b></li>
 <li>Finish the wizard</li>
-
 </ol>
-
-<div class="notice">
-
-Administrator rights are <b>not required</b>.  
-The certificate installs only for your user account.
-
 </div>
 
-</div>
-
-
-<!-- MAC -->
-
-<div id="mac" class="card os">
-
-<h2>macOS Instructions</h2>
-
+<div>
+<img src="https://cdn-icons-png.flaticon.com/512/0/747.png">
+<h3>macOS</h3>
 <ol>
-
 <li>Download the certificate</li>
-
 <li>Open the file</li>
-
 <li>Add to <b>System Keychain</b></li>
-
-<li>Open Keychain Access</li>
-
-<li>Set the certificate to <b>Always Trust</b></li>
-
+<li>Set trust to <b>Always Trust</b></li>
 </ol>
-
 </div>
 
-
-<!-- IOS -->
-
-<div id="ios" class="card os">
-
-<h2>iPhone / iPad Instructions</h2>
-
+<div>
+<img src="https://cdn-icons-png.flaticon.com/512/732/732208.png">
+<h3>iPhone / iPad</h3>
 <ol>
-
 <li>Download the certificate</li>
-
-<li>Open <b>Settings</b></li>
-
-<li>Select <b>Profile Downloaded</b></li>
-
+<li>Open Settings → <b>Profile Downloaded</b></li>
 <li>Install the profile</li>
-
-<li>Go to <b>General → About → Certificate Trust Settings</b></li>
-
-<li>Enable trust for the certificate</li>
-
+<li>Enable trust in Certificate Settings</li>
 </ol>
-
 </div>
 
-
-<!-- ANDROID -->
-
-<div id="android" class="card os">
-
-<h2>Android Instructions</h2>
-
+<div>
+<img src="https://cdn-icons-png.flaticon.com/512/732/732026.png">
+<h3>Android</h3>
 <ol>
-
 <li>Download the certificate</li>
-
-<li>Open <b>Security Settings</b></li>
-
+<li>Open Security Settings</li>
 <li>Select <b>Install Certificate</b></li>
-
 <li>Choose the downloaded file</li>
-
 </ol>
-
 </div>
 
+</div>
+</div>
 
 <div class="card">
 
 <h2>Why is this required?</h2>
 
 <p>
-
-This network uses secure filtering to meet safeguarding requirements.  
-Installing the certificate allows secure websites (HTTPS) to work correctly while connected.
-
+This network uses secure filtering to meet safeguarding requirements.
+Installing the certificate allows secure websites (HTTPS) to work correctly while connected to the network.
 </p>
 
 </div>
 
-
 </div>
 
 <footer>
-
-If you have issues installing the certificate please contact IT support.
-
+If you experience problems installing the certificate please contact IT support.
 </footer>
-
-
-<script>
-
-/* Device Detection */
-
-var ua = navigator.userAgent
-
-function show(id){
-document.getElementById(id).classList.add("visible")
-}
-
-if(ua.includes("Windows")){
-
-show("windows")
-
-document.getElementById("deviceText").innerHTML =
-"This looks like a <b>Windows device</b>."
-
-document.getElementById("installBtn").href="install-cert.exe"
-
-}
-
-else if(ua.includes("Mac")){
-
-show("mac")
-
-document.getElementById("deviceText").innerHTML =
-"This looks like a <b>Mac</b>."
-
-}
-
-else if(ua.includes("iPhone") || ua.includes("iPad")){
-
-show("ios")
-
-document.getElementById("deviceText").innerHTML =
-"This looks like an <b>iPhone or iPad</b>."
-
-}
-
-else if(ua.includes("Android")){
-
-show("android")
-
-document.getElementById("deviceText").innerHTML =
-"This looks like an <b>Android device</b>."
-
-}
-
-else{
-
-document.getElementById("deviceText").innerHTML =
-"Download the certificate and follow the instructions for your device."
-
-}
-
-</script>
 
 </body>
 </html>
