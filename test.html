@@ -2,24 +2,21 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Network Certificate Installation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* Thrive‑inspired colours */
+/* Thrive-inspired colours */
 :root{
   --site-background:#ffffff;
   --container-bg:#fafafa;
-  --header-bg:#2c3e50;      /* deep, trustworthy blue-grey */
-  --accent:#1e88e5;         /* friendly, professional blue */
-  --text-dark:#1e2022;      /* easy reading text */
-  --warning-bg:#fff4cc;     /* soft warning colour */
+  --header-bg:#2c3e50;
+  --accent:#1e88e5;
+  --text-dark:#1e2022;
+  --warning-bg:#fff4cc;
   --warning-border:#f0b400;
 }
 
@@ -102,9 +99,21 @@ header p {
 
 .os-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(4, 1fr);
   gap:25px;
   margin-top:18px;
+}
+
+@media (max-width:1000px){
+  .os-grid {
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width:650px){
+  .os-grid {
+    grid-template-columns:1fr;
+  }
 }
 
 .os {
@@ -134,7 +143,6 @@ footer {
   font-size:14px;
   color:#666;
 }
-
 </style>
 
 </head>
@@ -142,12 +150,9 @@ footer {
 <body>
 
 <header>
-
 <img src="logo.png" alt="Thrive Education Partnership logo">
-
 <h1>Network Certificate Installation</h1>
 <p>This page allows you to install the required network certificate for Thrive Education Partnership.</p>
-
 </header>
 
 <div class="container">
@@ -156,16 +161,13 @@ footer {
 <div class="card">
 <h2>Automatic Install (Windows)</h2>
 <p>If you are using a Windows device you can install the certificate automatically.</p>
-
 <a class="button" href="install-cert.exe">Install Certificate</a>
-
 <div class="warning">
 <strong>Important for Windows users:</strong><br>
 1. After downloading, your browser may try to block or delete the installer because it is unsigned — <b>keep the file</b> before running it.<br><br>
 2. Windows may display a SmartScreen warning — click <b>More Info → Run Anyway</b>.<br><br>
-3. You may need to restart or reload your browser for HTTPS sites to work.
+3. The certificate installs for your <b>current user account</b>. Administrator permissions are <b>not required</b>.
 </div>
-
 </div>
 
 <!-- Manual download -->
@@ -226,6 +228,12 @@ footer {
 <li>Choose the downloaded file</li>
 </ol>
 </div>
+
+</div>
+
+<!-- Unified note at the bottom -->
+<div class="note">
+<b>Note:</b> You may need to restart or reload your browser after installing the certificate for HTTPS sites to work correctly.
 </div>
 </div>
 
@@ -245,5 +253,3 @@ Thrive Education Partnership is committed to safe and filtered internet access f
 
 </body>
 </html>
-
-
