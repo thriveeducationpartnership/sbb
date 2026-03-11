@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,24 +14,24 @@
 
 /* Thrive‑inspired colours */
 :root{
-  --site‑background:#ffffff;
-  --container‑bg:#fafafa;
-  --header‑bg:#2c3e50;      /* deep, trustworthy blue‑grey */
+  --site-background:#ffffff;
+  --container-bg:#fafafa;
+  --header-bg:#2c3e50;      /* deep, trustworthy blue-grey */
   --accent:#1e88e5;         /* friendly, professional blue */
-  --text‑dark:#1e2022;      /* easy reading text */
-  --warning‑bg:#fff4cc;     /* soft warning colour */
-  --warning‑border:#f0b400;
+  --text-dark:#1e2022;      /* easy reading text */
+  --warning-bg:#fff4cc;     /* soft warning colour */
+  --warning-border:#f0b400;
 }
 
 body{
   margin:0;
   font-family:'Inter',sans-serif;
-  background:var(--site‑background);
-  color:var(--text‑dark);
+  background:var(--site-background);
+  color:var(--text-dark);
 }
 
 header {
-  background:var(--header‑bg);
+  background:var(--header-bg);
   color:white;
   text-align:center;
   padding:30px 20px;
@@ -55,7 +56,7 @@ header p {
 .container {
   margin:auto;
   padding:40px 20px;
-  background:var(--container‑bg);
+  background:var(--container-bg);
   max-width:960px;
 }
 
@@ -91,23 +92,23 @@ header p {
 }
 
 .warning {
-  background:var(--warning‑bg);
-  border-left:5px solid var(--warning‑border);
+  background:var(--warning-bg);
+  border-left:5px solid var(--warning-border);
   padding:15px;
   margin-top:20px;
   border-radius:4px;
   font-size:0.95em;
 }
 
-.os‑grid {
+.os-grid {
   display:grid;
-  grid-template-columns:repeat(auto‑fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:25px;
   margin-top:18px;
 }
 
 .os {
-  text‑align:center;
+  text-align:center;
 }
 
 .os img {
@@ -121,11 +122,17 @@ header p {
   padding-left:18px;
 }
 
+.os .note {
+  font-size:0.9em;
+  color:#555;
+  margin-top:8px;
+}
+
 footer {
   text-align:center;
   padding:25px;
-  color:#666;
   font-size:14px;
+  color:#666;
 }
 
 </style>
@@ -150,7 +157,7 @@ footer {
 <h2>Automatic Install (Windows)</h2>
 <p>If you are using a Windows device you can install the certificate automatically.</p>
 
-<a class="button" href="install-cert.exe">Download Installer</a>
+<a class="button" href="install-cert.exe">Install Certificate</a>
 
 <div class="warning">
 <strong>Important for Windows users:</strong><br>
@@ -171,7 +178,7 @@ footer {
 <!-- Device instructions -->
 <div class="card">
 <h2>Installation Instructions by Device</h2>
-<div class="os‑grid">
+<div class="os-grid">
 
 <div class="os">
 <img src="https://cdn-icons-png.flaticon.com/512/888/888882.png" alt="Windows icon">
@@ -181,9 +188,10 @@ footer {
 <li>Open the downloaded file</li>
 <li>Select <b>Install Certificate</b></li>
 <li>Choose <b>Current User</b></li>
-<li>Pick <b>Trusted Root Certification Authorities</b></li>
+<li>Select <b>Trusted Root Certification Authorities</b></li>
 <li>Finish the wizard</li>
 </ol>
+<div class="note">You may need to restart or reload your browser for HTTPS sites to work.</div>
 </div>
 
 <div class="os">
@@ -195,6 +203,7 @@ footer {
 <li>Add to <b>System Keychain</b></li>
 <li>Set trust to <b>Always Trust</b></li>
 </ol>
+<div class="note">You may need to restart or reload your browser for HTTPS sites to work.</div>
 </div>
 
 <div class="os">
@@ -207,6 +216,7 @@ footer {
 <li>Install the profile</li>
 <li>Enable trust in Certificate Settings</li>
 </ol>
+<div class="note">You may need to restart or reload your browser for HTTPS sites to work.</div>
 </div>
 
 <div class="os">
@@ -218,6 +228,7 @@ footer {
 <li>Select <b>Install Certificate</b></li>
 <li>Choose the downloaded file</li>
 </ol>
+<div class="note">You may need to restart or reload your browser for HTTPS sites to work.</div>
 </div>
 
 </div>
@@ -227,14 +238,14 @@ footer {
 <div class="card">
 <h2>Why is this required?</h2>
 <p>
-Thrive Education Partnership is committed to providing safe and filtered internet access for all learners and staff. Installing this certificate allows secure websites (HTTPS) to work correctly on the network, aligning with Thrive’s values of protection and support. :contentReference[oaicite:5]{index=5}
+Thrive Education Partnership is committed to safe and filtered internet access for all learners and staff. Installing this certificate allows secure websites (HTTPS) to work correctly on the network.
 </p>
 </div>
 
 </div>
 
 <footer>
-© Thrive Education Partnership
+© Thrive Educational Partnership
 </footer>
 
 </body>
