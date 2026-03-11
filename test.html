@@ -2,21 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Install Network Certificate</title>
+<title>Network Certificate Installation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
+:root{
+--primary:#003a8f;
+--secondary:#2b7cff;
+--background:#f5f7fa;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background:#f5f7fa;
+    background:var(--background);
     margin:0;
 }
 
 header{
-    background:#003a8f;
+    background:var(--primary);
     color:white;
-    padding:20px;
+    padding:30px 20px;
     text-align:center;
+}
+
+.logo{
+    max-width:220px;
+    margin-bottom:15px;
 }
 
 .container{
@@ -37,11 +49,15 @@ header{
     display:inline-block;
     padding:14px 20px;
     margin-top:10px;
-    background:#2b7cff;
+    background:var(--secondary);
     color:white;
     text-decoration:none;
     border-radius:5px;
     font-weight:bold;
+}
+
+.button:hover{
+    opacity:0.9;
 }
 
 .warning{
@@ -66,6 +82,7 @@ footer{
     padding:20px;
     color:#666;
 }
+
 </style>
 
 </head>
@@ -73,13 +90,21 @@ footer{
 <body>
 
 <header>
+
+<img src="logo.png" class="logo">
+
 <h1>Network Certificate Required</h1>
-<p>To access the internet on this network you must install the certificate below.</p>
+
+<p>
+To access the internet on the Thrive network you must install the security certificate below.
+</p>
+
 </header>
 
 <div class="container">
 
 <div class="card">
+
 <h2>Automatic Install (Windows)</h2>
 
 <p>If you are using Windows you can install the certificate automatically.</p>
@@ -87,6 +112,7 @@ footer{
 <a class="button" href="install-cert.exe">Download Installer</a>
 
 <div class="warning">
+
 <strong>Note:</strong> Windows may display a SmartScreen warning.  
 Click <b>More Info → Run Anyway</b>.
 
@@ -94,12 +120,14 @@ Click <b>More Info → Run Anyway</b>.
 
 The certificate will be installed for your <b>current user account</b>.  
 Administrator rights are <b>not required</b>.
+
 </div>
 
 </div>
 
 
 <div class="card">
+
 <h2>Manual Installation</h2>
 
 <p>If you prefer, download the certificate and install it manually.</p>
@@ -110,6 +138,7 @@ Administrator rights are <b>not required</b>.
 
 
 <div class="card">
+
 <h2>Instructions by Device</h2>
 
 <div class="os">
@@ -123,7 +152,7 @@ Administrator rights are <b>not required</b>.
 <li>Select <b>Install Certificate</b></li>
 <li>Choose <b>Current User</b></li>
 <li>Select <b>Trusted Root Certification Authorities</b></li>
-<li>Finish the wizard</li>
+<li>Finish</li>
 </ol>
 </div>
 
@@ -144,7 +173,7 @@ Administrator rights are <b>not required</b>.
 <ol>
 <li>Download the certificate</li>
 <li>Open Settings → <b>Profile Downloaded</b></li>
-<li>Install the profile</li>
+<li>Install profile</li>
 <li>Enable trust in Certificate Settings</li>
 </ol>
 </div>
@@ -153,7 +182,7 @@ Administrator rights are <b>not required</b>.
 <img src="https://cdn-icons-png.flaticon.com/512/732/732026.png">
 <h3>Android</h3>
 <ol>
-<li>Download the certificate</li>
+<li>Download certificate</li>
 <li>Open Security Settings</li>
 <li>Select <b>Install Certificate</b></li>
 <li>Choose the downloaded file</li>
@@ -161,15 +190,17 @@ Administrator rights are <b>not required</b>.
 </div>
 
 </div>
+
 </div>
+
 
 <div class="card">
 
 <h2>Why is this required?</h2>
 
 <p>
-This network uses secure filtering to meet safeguarding requirements.
-Installing the certificate allows secure websites (HTTPS) to work correctly while connected to the network.
+The Thrive network uses secure web filtering to meet safeguarding requirements.  
+Installing the certificate allows secure websites (HTTPS) to function correctly while connected to the network.
 </p>
 
 </div>
@@ -177,7 +208,9 @@ Installing the certificate allows secure websites (HTTPS) to work correctly whil
 </div>
 
 <footer>
-If you experience problems installing the certificate please contact IT support.
+
+© Thrive Educational Partnership
+
 </footer>
 
 </body>
