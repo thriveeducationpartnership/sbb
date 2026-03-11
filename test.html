@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,108 +11,121 @@
 
 <style>
 
+/* Thrive‑inspired colours */
 :root{
---primary:#0d3f7a;
---accent:#1e88e5;
---background:#f4f7fb;
---card:#ffffff;
+  --site‑background:#ffffff;
+  --container‑bg:#fafafa;
+  --header‑bg:#2c3e50;      /* deep, trustworthy blue‑grey */
+  --accent:#1e88e5;         /* friendly, professional blue */
+  --text‑dark:#1e2022;      /* easy reading text */
+  --warning‑bg:#fff4cc;     /* soft warning colour */
+  --warning‑border:#f0b400;
 }
 
 body{
-font-family:'Inter',sans-serif;
-background:var(--background);
-margin:0;
-color:#333;
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--site‑background);
+  color:var(--text‑dark);
 }
 
-header{
-background:var(--primary);
-color:white;
-padding:40px 20px;
-text-align:center;
+header {
+  background:var(--header‑bg);
+  color:white;
+  text-align:center;
+  padding:30px 20px;
 }
 
-.logo{
-max-width:220px;
-margin-bottom:15px;
+header img {
+  max-width:200px;
+  margin-bottom:10px;
 }
 
-header h1{
-margin:10px 0 5px;
-font-weight:700;
+header h1 {
+  margin:10px 0 5px;
+  font-size:1.8em;
+  font-weight:700;
 }
 
-header p{
-opacity:0.9;
+header p {
+  font-size:1em;
+  opacity:0.85;
 }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
+.container {
+  margin:auto;
+  padding:40px 20px;
+  background:var(--container‑bg);
+  max-width:960px;
 }
 
-.card{
-background:var(--card);
-padding:30px;
-border-radius:10px;
-box-shadow:0 6px 18px rgba(0,0,0,0.08);
-margin-bottom:25px;
+.card {
+  background:white;
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:25px 30px;
+  margin-bottom:25px;
 }
 
-.card h2{
-margin-top:0;
+.card h2 {
+  margin-top:0;
+  font-size:1.4em;
+  font-weight:600;
+  color:var(--accent);
 }
 
-.button{
-display:inline-block;
-padding:16px 28px;
-background:var(--accent);
-color:white;
-font-weight:600;
-border-radius:6px;
-text-decoration:none;
-margin-top:10px;
+.button {
+  display:inline-block;
+  padding:14px 26px;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+  font-size:1em;
+  margin-top:12px;
 }
 
-.button:hover{
-background:#166dc0;
+.button:hover {
+  opacity:0.9;
 }
 
-.warning{
-background:#fff4cc;
-border-left:5px solid #f0b400;
-padding:15px;
-margin-top:20px;
-border-radius:4px;
+.warning {
+  background:var(--warning‑bg);
+  border-left:5px solid var(--warning‑border);
+  padding:15px;
+  margin-top:20px;
+  border-radius:4px;
+  font-size:0.95em;
 }
 
-.os-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:15px;
+.os‑grid {
+  display:grid;
+  grid-template-columns:repeat(auto‑fit,minmax(220px,1fr));
+  gap:25px;
+  margin-top:18px;
 }
 
-.os{
-text-align:center;
+.os {
+  text‑align:center;
 }
 
-.os img{
-width:60px;
-margin-bottom:10px;
+.os img {
+  width:58px;
+  margin-bottom:10px;
 }
 
-.os ol{
-text-align:left;
-font-size:14px;
+.os ol {
+  text-align:left;
+  font-size:14px;
+  padding-left:18px;
 }
 
-footer{
-text-align:center;
-padding:30px;
-font-size:14px;
-color:#666;
+footer {
+  text-align:center;
+  padding:25px;
+  color:#666;
+  font-size:14px;
 }
 
 </style>
@@ -124,176 +136,105 @@ color:#666;
 
 <header>
 
-<img src="logo.png" class="logo">
+<img src="logo.png" alt="Thrive Education Partnership logo">
 
-<h1>Network Certificate Required</h1>
-
-<p>
-To access the Thrive network you must install the security certificate below.
-</p>
+<h1>Network Certificate Installation</h1>
+<p>This page allows you to install the required network certificate for Thrive Education Partnership.</p>
 
 </header>
 
-
 <div class="container">
 
-
+<!-- Windows installer -->
 <div class="card">
-
 <h2>Automatic Install (Windows)</h2>
+<p>If you are using a Windows device you can install the certificate automatically.</p>
 
-<p>
-If you are using a Windows device you can install the certificate automatically.
-</p>
-
-<a class="button" href="install-cert.exe">
-Install Certificate
-</a>
+<a class="button" href="install-cert.exe">Download Installer</a>
 
 <div class="warning">
-
-<strong>Important Windows Notes:</strong><br>
-
-1. After downloading, your browser may try to block or delete the file because it is unsigned.  
-   You will need to <b>keep the file</b> before running it.<br><br>
-
-2. Windows may display a SmartScreen warning. Click <b>More Info → Run Anyway</b>.<br><br>
-
-3. The certificate installs for your <b>current user account</b>.  
-   Administrator permissions are <b>not required</b>.
-
+<strong>Important for Windows users:</strong><br>
+1. After downloading, your browser may try to block or delete the installer because it is unsigned — <b>keep the file</b> before running it.<br><br>
+2. Windows may display a SmartScreen warning — click <b>More Info → Run Anyway</b>.<br><br>
+3. The certificate installs for your <b>current user account</b>. Administrator permissions are <b>not required</b>.
 </div>
 
 </div>
 
-
-
+<!-- Manual download -->
 <div class="card">
-
 <h2>Manual Installation</h2>
-
-<p>
-If the installer does not work you can install the certificate manually.
-</p>
-
-<a class="button" href="certificate.crt">
-Download Certificate
-</a>
-
+<p>If the automatic installer does not work you can install the certificate manually.</p>
+<a class="button" href="certificate.crt">Download Certificate</a>
 </div>
 
-
-
+<!-- Device instructions -->
 <div class="card">
-
-<h2>Instructions by Device</h2>
-
-<div class="os-grid">
+<h2>Installation Instructions by Device</h2>
+<div class="os‑grid">
 
 <div class="os">
-
-<img src="https://cdn-icons-png.flaticon.com/512/888/888882.png">
-
+<img src="https://cdn-icons-png.flaticon.com/512/888/888882.png" alt="Windows icon">
 <h3>Windows</h3>
-
 <ol>
-
 <li>Download the certificate</li>
-<li>Double-click the file</li>
+<li>Open the downloaded file</li>
 <li>Select <b>Install Certificate</b></li>
 <li>Choose <b>Current User</b></li>
-<li>Select <b>Trusted Root Certification Authorities</b></li>
+<li>Pick <b>Trusted Root Certification Authorities</b></li>
 <li>Finish the wizard</li>
-
 </ol>
-
 </div>
 
-
 <div class="os">
-
-<img src="https://cdn-icons-png.flaticon.com/512/2/2235.png">
-
+<img src="https://cdn-icons-png.flaticon.com/512/2/2235.png" alt="Mac icon">
 <h3>macOS</h3>
-
 <ol>
-
 <li>Download the certificate</li>
 <li>Open the file</li>
 <li>Add to <b>System Keychain</b></li>
 <li>Set trust to <b>Always Trust</b></li>
-
 </ol>
-
 </div>
 
-
-
 <div class="os">
-
-<img src="https://cdn-icons-png.flaticon.com/512/831/831276.png">
-
+<img src="https://cdn-icons-png.flaticon.com/512/831/831276.png" alt="iPhone icon">
 <h3>iPhone / iPad</h3>
-
 <ol>
-
 <li>Download the certificate</li>
 <li>Open <b>Settings</b></li>
 <li>Select <b>Profile Downloaded</b></li>
 <li>Install the profile</li>
 <li>Enable trust in Certificate Settings</li>
-
 </ol>
-
 </div>
 
-
-
 <div class="os">
-
-<img src="https://cdn-icons-png.flaticon.com/512/888/888839.png">
-
+<img src="https://cdn-icons-png.flaticon.com/512/888/888839.png" alt="Android icon">
 <h3>Android</h3>
-
 <ol>
-
 <li>Download the certificate</li>
 <li>Open <b>Security Settings</b></li>
 <li>Select <b>Install Certificate</b></li>
 <li>Choose the downloaded file</li>
-
 </ol>
-
 </div>
 
 </div>
-
 </div>
 
-
-
+<!-- Why required -->
 <div class="card">
-
 <h2>Why is this required?</h2>
-
 <p>
-
-The Thrive network uses secure web filtering to support safeguarding requirements.  
-Installing the certificate allows encrypted websites (HTTPS) to work correctly while connected to the network.
-
+Thrive Education Partnership is committed to providing safe and filtered internet access for all learners and staff. Installing this certificate allows secure websites (HTTPS) to work correctly on the network, aligning with Thrive’s values of protection and support. :contentReference[oaicite:5]{index=5}
 </p>
-
 </div>
 
-
 </div>
-
-
 
 <footer>
-
-© Thrive Educational Partnership
-
+© Thrive Education Partnership
 </footer>
 
 </body>
